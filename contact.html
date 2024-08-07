@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Contact Us - Digital Agriculture Research Lab</title>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+
+	<body>
+		<!-- *************************************HEADER SECTION***************************************************** -->
+		<header id="navigator" class="navigator">
+			<a href="index.html" class="logo">Digital Agriculture Research Lab</a>
+
+			<nav class="navbar">
+				<a href="profile.html">profile</a>
+				<a href="teaching.html">teaching</a>
+				<a href="research.html">research</a>
+				<a href="extension.html">extension</a>
+				<a href="team.html">team</a>
+				<a href="contact.html">contact</a>
+			</nav>
+			<!-- 
+			<div class="bx bx-brightness-half" id="darkMode-icon"></div> -->
+
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</header>
+		<!-- *************************************HEADER SECTION***************************************************** -->
+		<!-- <div class="container mt-5">
+        <div class="card">
+            <div class="card-header heading">
+                Contact Us
+            </div>
+            <div class="card-body">
+                <form action="sendmail.php" method="POST">
+                    <div class="mb-3">
+                        <label for="full_name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="full_name" name="full_name" required>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="email_address" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email_address" name="email" required>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="subject" name="subject" required>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea name="message" id="message" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" name="submitContact" class="btn btn-primary">Send Mail</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> -->
+		<section id="contact" class="contact">
+			<h2 class="heading">Contact</h2>
+
+			<form id="form" action="sendmail.php" method="POST">
+				<div class="input-box">
+					<input
+						type="text"
+						id="full_name"
+						name="full_name"
+						placeholder="Full Name"
+						required
+					/>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						placeholder="Email Address"
+						required
+					/>
+				</div>
+				<div class="input-box">
+					<input
+						id="phone_number"
+						type="number"
+						name="phone_number"
+						placeholder="Mobile Number"
+					/>
+					<input
+						type="text"
+						id="subject"
+						name="subject"
+						required
+						placeholder="Email Subject"
+					/>
+				</div>
+				<textarea
+					name="message"
+					id="message"
+					cols="30"
+					rows="3"
+					placeholder="Your Message"
+				></textarea>
+				<button type="submit" name="submitContact" class="btn">
+					Send Mail
+				</button>
+			</form>
+
+			<p class="text">
+				<span
+					>If you have any questions, comments, or need further information,
+					please don't hesitate to reach out to us. We're here to help and look
+					forward to hearing from you. Whether you're interested in our
+					services, have a partnership proposal, or just want to learn more
+					about what we do, feel free to get in touch. Our team is dedicated to
+					providing prompt and helpful responses to all inquiries.</span
+				>
+			</p>
+		</section>
+		<!-- *************************************ACHIEVEMENTS BODY***************************************************** -->
+		<footer class="footer">
+			<div class="footer-text">
+				<p class="footers"></p>
+			</div>
+
+			<div class="footer-link">
+				<p>Created by <a href=""></a>AntPat</p>
+			</div>
+		</footer>
+
+		<!-- smtp js
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+
+		<!-- <script src="https://kit.fontawesome.com/e88b60785c.js" crossorigin="anonymous"></script> -->
+
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script>
+			let messageText = "<?= $_SESSION['status'] ?? ''; ?>";
+			if (messageText != '') {
+			    Swal.fire({
+			        title: messageText,
+			        icon: "success"
+			    });
+			    setTimeout(() => {
+			        window.location.href = "index.html";
+			    }, 1500); // Change 1500 to the desired duration in milliseconds. 1000 = 1 second. 2000 = 2 seconds. 3000 = 3 seconds. ect. 1500 = 2.5 seconds. 5000 = 5 seconds. ect.
+			    <?php unset($_SESSION['status']); ?>
+			}
+		</script>
+		<script src="index.js"></script>
+		<script src="footer.js"></script>
+	</body>
+</html>
