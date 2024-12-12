@@ -97,11 +97,18 @@
 		</footer>
 
 		<!-- Load EmailJS SDK -->
-		<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
+		<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "SY9plrZtZI2owgGbB");",
+      });
+   })();
+</script>
 		<script>
-			// Initialize EmailJS
-			emailjs.init("SY9plrZtZI2owgGbB"); // Replace with your EmailJS User ID
+	
 
 			// Form submission handling
 			document.getElementById("contact-form").addEventListener("submit", function (e) {
